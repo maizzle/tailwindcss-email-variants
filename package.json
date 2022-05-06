@@ -12,9 +12,11 @@
   "publishConfig": {
     "access": "public"
   },
+  "dependencies": {
+    "lodash.get": "^4.4.2"
+  },
   "devDependencies": {
     "jest": "^28.0.3",
-    "lodash.get": "^4.4.2",
     "np": "^7.6.1",
     "postcss": "^8.2.2",
     "prettier": "^2.5.1",
