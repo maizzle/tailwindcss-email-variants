@@ -23,7 +23,7 @@ function run(config, plugin = tailwindcss) {
   })
 }
 
-it('should add the `ogsc` variant', () => {
+it('`ogsc` variant', () => {
   const config = {
     content: [{ raw: String.raw`<div class="ogsc:text-slate-200"></div>` }]
   }
@@ -37,7 +37,7 @@ it('should add the `ogsc` variant', () => {
   })
 })
 
-it('should add the `ogsb` variant', () => {
+it('`ogsb` variant', () => {
   const config = {
     content: [{ raw: String.raw`<div class="ogsb:bg-slate-900"></div>` }]
   }
@@ -51,7 +51,7 @@ it('should add the `ogsb` variant', () => {
   })
 })
 
-it('should add the `gmail` variant', () => {
+it('`gmail` variant', () => {
   const config = {
     content: [{ raw: String.raw`<div class="gmail:hidden"></div>` }]
   }
@@ -65,7 +65,7 @@ it('should add the `gmail` variant', () => {
   })
 })
 
-it('should add the `gmail-android` variant', () => {
+it('`gmail-android` variant', () => {
   const config = {
     content: [{ raw: String.raw`<div class="gmail-android:hidden"></div>` }]
   }
@@ -79,7 +79,7 @@ it('should add the `gmail-android` variant', () => {
   })
 })
 
-it('should add the `ios` variant', () => {
+it('`ios` variant', () => {
   const config = {
     content: [{ raw: String.raw`<div class="ios:hidden"></div>` }]
   }
@@ -95,7 +95,7 @@ it('should add the `ios` variant', () => {
   })
 })
 
-it('should add the `ios-15` variant', () => {
+it('`ios-15` variant', () => {
   const config = {
     content: [{ raw: String.raw`<div class="ios-15:hidden"></div>` }]
   }
@@ -111,7 +111,7 @@ it('should add the `ios-15` variant', () => {
   })
 })
 
-it('should add the `outlook-web` variant', () => {
+it('`outlook-web` variant', () => {
   const config = {
     content: [{ raw: String.raw`<div class="outlook-web:hidden"></div>` }]
   }
@@ -125,7 +125,7 @@ it('should add the `outlook-web` variant', () => {
   })
 })
 
-it('should generate user-defined variants', () => {
+it('user-defined variants', () => {
   const config = {
     content: [{ raw: String.raw`<div class="thunderbird:hidden example:hidden"></div>` }],
     plugins: [
