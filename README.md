@@ -27,31 +27,7 @@ module.exports = {
 
 ## Usage
 
-Use the available variants to generate utilities that target specific email clients.
-
-### Outlook.com dark mode
-
-Change `color` and `background-color` of elements in [Outlook.com dark mode](https://www.hteumeuleu.com/2021/emails-react-outlook-com-dark-mode/).
-
-```html
-<!-- Color -->
-<div class="ogsc:text-slate-200">...</div>
-
-<!-- Background color -->
-<div class="ogsb:bg-slate-900">...</div>
-```
-
-Result:
-
-```css
-[data-ogsc] .ogsc\:text-slate-200 {
-  color: #e2e8f0;
-}
-
-[data-ogsb] .ogsb\:bg-slate-900 {
-  background-color: #0f172a;
-}
-```
+Use the available variants to generate utilities that target specific email clients, or [configure it](#configuration) with your own variants.
 
 ### Gmail
 
@@ -81,6 +57,22 @@ Result:
 
 ```css
 div > u + .body .gmail-android\:hidden {
+  display: none;
+}
+```
+
+### Apple Mail (10+)
+
+Use the `apple-mail` variant to target Apple Mail 10 and up:
+
+```html
+<div class="apple-mail:hidden">...</div>
+```
+
+Result:
+
+```css
+.Singleton .apple-mail\:hidden {
   display: none;
 }
 ```
@@ -133,6 +125,48 @@ Result:
 
 ```css
 [class~="x_outlook-web\:hidden"] {
+  display: none;
+}
+```
+
+### Outlook.com dark mode
+
+Change `color` and `background-color` of elements in [Outlook.com dark mode](https://www.hteumeuleu.com/2021/emails-react-outlook-com-dark-mode/).
+
+```html
+<!-- Color -->
+<div class="ogsc:text-slate-200">...</div>
+
+<!-- Background color -->
+<div class="ogsb:bg-slate-900">...</div>
+```
+
+Result:
+
+```css
+[data-ogsc] .ogsc\:text-slate-200 {
+  color: #e2e8f0;
+}
+
+[data-ogsb] .ogsb\:bg-slate-900 {
+  background-color: #0f172a;
+}
+```
+
+### Open-Xchange
+
+Use the `ox` variant to target webmail clients that are powered by [Open-Xchange](https://www.open-xchange.com/).
+
+Some of these email clients include Comcast, Libero, 1&1 MailXchange, Network Solutions Secure Mail, Namecheap Email Hosting, Mailbox.org, 123-reg Email, acens Correo Professional, Home.pl Cloud Email Xchange, Virgin Media Mail, and Ziggo Mail.
+
+```html
+<div class="ox:hidden">...</div>
+```
+
+Result:
+
+```css
+.ox\:hidden[class^="ox-"] {
   display: none;
 }
 ```
