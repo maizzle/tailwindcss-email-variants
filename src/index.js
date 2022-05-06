@@ -31,6 +31,9 @@ const emailClientVariants = plugin.withOptions(
         return `[class~="x_outlook-web\\:${foo}"]`
       })
 
+      // Open-Xchange (multiple clients)
+      addVariant('ox', '&[class^="ox-"]')
+
       // User-defined variants
       Object.keys(userVariants).forEach(key => {
         addVariant(key, userVariants[key])

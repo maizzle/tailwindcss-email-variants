@@ -139,6 +139,20 @@ it('`apple-mail` variant', () => {
   })
 })
 
+it('`ox` variant', () => {
+  const config = {
+    content: [{ raw: String.raw`<div class="ox:hidden"></div>` }]
+  }
+
+  return run(config).then((result) => {
+    expect(result.css).toMatchCss(String.raw`
+      .ox\:hidden[class^="ox-"] {
+        display: none;
+      }
+    `)
+  })
+})
+
 it('user-defined variants', () => {
   const config = {
     content: [{ raw: String.raw`<div class="thunderbird:hidden example:hidden"></div>` }],
