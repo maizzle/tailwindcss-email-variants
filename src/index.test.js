@@ -125,6 +125,20 @@ it('`outlook-web` variant', () => {
   })
 })
 
+it('`apple-mail` variant', () => {
+  const config = {
+    content: [{ raw: String.raw`<div class="apple-mail:hidden"></div>` }]
+  }
+
+  return run(config).then((result) => {
+    expect(result.css).toMatchCss(String.raw`
+      .Singleton .apple-mail\:hidden {
+        display: none;
+      }
+    `)
+  })
+})
+
 it('user-defined variants', () => {
   const config = {
     content: [{ raw: String.raw`<div class="thunderbird:hidden example:hidden"></div>` }],

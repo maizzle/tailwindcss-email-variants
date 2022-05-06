@@ -16,6 +16,9 @@ const emailClientVariants = plugin.withOptions(
       // Gmail (Android)
       addVariant('gmail-android', 'div > u + .body &')
 
+      // Apple Mail
+      addVariant('apple-mail', '.Singleton &')
+
       // iOS Mail 10+
       addVariant('ios', '@supports (-webkit-overflow-scrolling:touch) and (color:#ffff)')
 
