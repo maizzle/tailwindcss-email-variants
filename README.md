@@ -2,6 +2,8 @@
 
 A plugin that provides variants for email client targeting hacks used in HTML emails.
 
+All variants are based on targeting hacks from [howtotarget.email](https://howtotarget.email)
+
 ## Installation
 
 Install the plugin from npm:
