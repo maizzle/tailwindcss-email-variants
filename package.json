@@ -35,5 +35,15 @@
     "setupFilesAfterEnv": [
       "<rootDir>/jest/customMatchers.js"
     ]
-  }
+  },
+  "keywords": [
+    "tailwindcss",
+    "maizzle",
+    "html-email",
+    "outlook-css",
+    "email-clients",
+    "email-hacks",
+    "email-targeting",
+    "postcss-plugin"
+  ]
 }
