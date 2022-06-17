@@ -115,22 +115,6 @@ Result:
 }
 ```
 
-### Outlook (webmail)
-
-Use the `outlook-web` variant to target iOS Mail 15 specifically:
-
-```html
-<div class="outlook-web:hidden">...</div>
-```
-
-Result:
-
-```css
-[class~="x_outlook-web\:hidden"] {
-  display: none;
-}
-```
-
 ### Outlook.com dark mode
 
 Change `color` and `background-color` of elements in [Outlook.com dark mode](https://www.hteumeuleu.com/2021/emails-react-outlook-com-dark-mode/).
@@ -170,40 +154,5 @@ Result:
 ```css
 .ox\:hidden[class^="ox-"] {
   display: none;
-}
-```
-
-## Configuration
-
-You can add your own variants by passing a configuration object to the plugin.
-
-```js
-// tailwind.config.js
-module.exports = {
-  plugins: [
-    require('tailwindcss-email-variants')({
-      thunderbird: '.moz-text-html &', // & is the utility class
-      example: ctx => `.example ${ctx.container.nodes[0].selector}` // using a function
-    }),
-    // ...
-  ],
-}
-```
-
-Use it:
-
-```html
-<div class="thunderbird:hidden example:flex">...</div>
-```
-
-Result:
-
-```css
-.moz-text-html .thunderbird\:hidden {
-  display: none;
-}
-
-.example .flex {
-  display: flex;
 }
 ```
