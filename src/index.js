@@ -25,19 +25,8 @@ const emailClientVariants = plugin.withOptions(
       // iOS Mail 15+
       addVariant('ios-15', '@supports (-webkit-overflow-scrolling:touch) and (aspect-ratio: 1 / 1)')
 
-      // Outlook (webmail)
-      addVariant('outlook-web', ctx => {
-        const foo = get(ctx.container.nodes[0], 'raws.tailwind.classCandidate', '&')
-        return `[class~="x_outlook-web\\:${foo}"]`
-      })
-
       // Open-Xchange (multiple clients)
       addVariant('ox', '&[class^="ox-"]')
-
-      // User-defined variants
-      Object.keys(userVariants).forEach(key => {
-        addVariant(key, userVariants[key])
-      })
     }
   }
 )
