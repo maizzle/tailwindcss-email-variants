@@ -111,20 +111,6 @@ it('`ios-15` variant', () => {
   })
 })
 
-it('`outlook-web` variant', () => {
-  const config = {
-    content: [{ raw: String.raw`<div class="outlook-web:hidden"></div>` }]
-  }
-
-  return run(config).then((result) => {
-    expect(result.css).toMatchCss(String.raw`
-      [class~="x_outlook-web\:hidden"] {
-        display: none;
-      }
-    `)
-  })
-})
-
 it('`apple-mail` variant', () => {
   const config = {
     content: [{ raw: String.raw`<div class="apple-mail:hidden"></div>` }]
@@ -147,30 +133,6 @@ it('`ox` variant', () => {
   return run(config).then((result) => {
     expect(result.css).toMatchCss(String.raw`
       .ox\:hidden[class^="ox-"] {
-        display: none;
-      }
-    `)
-  })
-})
-
-it('user-defined variants', () => {
-  const config = {
-    content: [{ raw: String.raw`<div class="thunderbird:hidden example:hidden"></div>` }],
-    plugins: [
-      etvPlugin({
-        thunderbird: '.moz-text-html &',
-        example: ctx => `.example ${ctx.container.nodes[0].selector}`
-      })
-    ],
-  }
-
-  return run(config).then((result) => {
-    expect(result.css).toMatchCss(String.raw`
-      .moz-text-html .thunderbird\:hidden {
-        display: none;
-      }
-
-      .example .hidden {
         display: none;
       }
     `)
