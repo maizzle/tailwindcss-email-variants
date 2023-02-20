@@ -143,7 +143,7 @@ Result:
 
 Use the `ox` variant to target webmail clients that are powered by [Open-Xchange](https://www.open-xchange.com/).
 
-Some of these email clients include Comcast, Libero, 1&1 MailXchange, Network Solutions Secure Mail, Namecheap Email Hosting, Mailbox.org, 123-reg Email, acens Correo Professional, Home.pl Cloud Email Xchange, Virgin Media Mail, and Ziggo Mail.
+Some of these email clients include Comcast, Libero, 1&1 MailXchange, Network Solutions Secure Mail, Namecheap Email Hosting, Mailbox.org, 123-reg Email, Acens Correo Professional, Home.pl Cloud Email Xchange, Virgin Media Mail, and Ziggo Mail.
 
 ```html
 <div class="ox:hidden">...</div>
