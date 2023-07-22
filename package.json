@@ -45,5 +45,8 @@
     "email-hacks",
     "email-targeting",
     "postcss-plugin"
-  ]
+  ],
+  "engines": {
+    "node": ">=14.0.0"
+  }
 }
