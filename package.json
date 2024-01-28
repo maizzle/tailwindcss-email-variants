@@ -3,38 +3,28 @@
   "version": "2.0.3",
   "description": "Tailwind CSS variants for email client CSS targeting hacks",
   "main": "src/index.js",
+  "files": [
+    "src/index.js"
+  ],
   "scripts": {
     "release": "np",
-    "test": "jest"
+    "dev": "vitest",
+    "test": "vitest run --coverage"
   },
   "license": "MIT",
   "repository": "https://github.com/maizzle/tailwindcss-email-variants",
   "publishConfig": {
     "access": "public"
   },
-  "dependencies": {
-    "lodash.get": "^4.4.2"
-  },
   "devDependencies": {
-    "jest": "^28.0.3",
-    "np": "^9.0.0",
-    "postcss": "^8.2.2",
-    "prettier": "^2.5.1",
-    "tailwindcss": "^3.1.3"
+    "@vitest/coverage-v8": "^1.2.2",
+    "np": "^9.2.0",
+    "postcss": "^8.4.33",
+    "tailwindcss": "^3.4.0",
+    "vitest": "^1.2.2"
   },
   "peerDependencies": {
-    "tailwindcss": ">=3.1.0"
-  },
-  "prettier": {
-    "printWidth": 100,
-    "semi": false,
-    "singleQuote": true,
-    "trailingComma": "es5"
-  },
-  "jest": {
-    "setupFilesAfterEnv": [
-      "<rootDir>/jest/customMatchers.js"
-    ]
+    "tailwindcss": ">=3.4.0"
   },
   "keywords": [
     "tailwindcss",
@@ -47,6 +37,6 @@
     "postcss-plugin"
   ],
   "engines": {
-    "node": ">=14.0.0"
+    "node": ">=18"
   }
 }
