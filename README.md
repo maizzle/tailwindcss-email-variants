@@ -1,6 +1,12 @@
-# tailwindcss-email-variants
+<div align="center">
+  <img src="./.github/tailwindcss-mark.svg" alt="Tailwind CSS" width="108" height="66">
+  <h1>Tailwind CSS Email Variants</h1>
 
-A plugin that provides variants for email client targeting hacks used in HTML emails.
+  [![Build][github-ci-shield]][github-ci]
+  [![License][license-shield]][license]
+</div>
+
+A Tailwind CSS plugin that provides variants for email client targeting hacks used in HTML emails.
 
 All variants are based on targeting hacks from [howtotarget.email](https://howtotarget.email)
 
@@ -15,21 +21,18 @@ npm install -D tailwindcss-email-variants
 Then add the plugin to your `tailwind.config.js` file:
 
 ```js
-// tailwind.config.js
+/** @type {import('tailwindcss').Config} */
 module.exports = {
-  theme: {
-    // ...
-  },
+  // ...
   plugins: [
     require('tailwindcss-email-variants'),
-    // ...
   ],
 }
 ```
 
 ## Usage
 
-Use the available variants to generate utilities that target specific email clients, or [configure it](#configuration) with your own variants.
+Use the available variants to generate utilities that target specific email clients.
 
 ### Gmail
 
@@ -156,3 +159,8 @@ Result:
   display: none;
 }
 ```
+
+[github-ci]: https://github.com/maizzle/tailwindcss-email-variants/actions
+[github-ci-shield]: https://github.com/maizzle/tailwindcss-email-variants/actions/workflows/nodejs.yml/badge.svg
+[license]: ./LICENSE
+[license-shield]: https://img.shields.io/github/license/maizzle/tailwindcss-email-variants?color=0e9f6e
