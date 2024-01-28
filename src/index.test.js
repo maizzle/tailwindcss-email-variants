@@ -1,11 +1,32 @@
-const path = require('path')
-const etvPlugin = require('.')
-const get = require('lodash.get')
-const postcss = require('postcss')
-const tailwindcss = require('tailwindcss')
+import path from 'path'
+import etvPlugin from '.'
+import postcss from 'postcss'
+import { expect, test } from 'vitest'
+import tailwindcss from 'tailwindcss'
+
+// Custom CSS matcher
+expect.extend({
+  // Compare two CSS strings with all whitespace removed
+  // This is probably naive but it's fast and works well enough.
+  toMatchCss(received, argument) {
+    function stripped(string_) {
+      return string_.replaceAll(/\s/g, '').replaceAll(';', '')
+    }
+
+    const pass = stripped(received) === stripped(argument)
+
+    return {
+      pass,
+      actual: received,
+      expected: argument,
+      message: () => pass ? 'All good!' : 'CSS does not match',
+    }
+  }
+})
 
 function run(config, plugin = tailwindcss) {
   let { currentTestName } = expect.getState()
+
   config = {
     ...{
       plugins: [etvPlugin],
@@ -23,7 +44,7 @@ function run(config, plugin = tailwindcss) {
   })
 }
 
-it('`ogsc` variant', () => {
+test('`ogsc` variant', () => {
   const config = {
     content: [{ raw: String.raw`<div class="ogsc:text-slate-200"></div>` }]
   }
@@ -37,7 +58,7 @@ it('`ogsc` variant', () => {
   })
 })
 
-it('`ogsb` variant', () => {
+test('`ogsb` variant', () => {
   const config = {
     content: [{ raw: String.raw`<div class="ogsb:bg-slate-900"></div>` }]
   }
@@ -51,7 +72,7 @@ it('`ogsb` variant', () => {
   })
 })
 
-it('`gmail` variant', () => {
+test('`gmail` variant', () => {
   const config = {
     content: [{ raw: String.raw`<div class="gmail:hidden"></div>` }]
   }
@@ -65,7 +86,7 @@ it('`gmail` variant', () => {
   })
 })
 
-it('`gmail-android` variant', () => {
+test('`gmail-android` variant', () => {
   const config = {
     content: [{ raw: String.raw`<div class="gmail-android:hidden"></div>` }]
   }
@@ -79,7 +100,7 @@ it('`gmail-android` variant', () => {
   })
 })
 
-it('`ios` variant', () => {
+test('`ios` variant', () => {
   const config = {
     content: [{ raw: String.raw`<div class="ios:hidden"></div>` }]
   }
@@ -95,7 +116,7 @@ it('`ios` variant', () => {
   })
 })
 
-it('`ios-15` variant', () => {
+test('`ios-15` variant', () => {
   const config = {
     content: [{ raw: String.raw`<div class="ios-15:hidden"></div>` }]
   }
@@ -111,7 +132,7 @@ it('`ios-15` variant', () => {
   })
 })
 
-it('`apple-mail` variant', () => {
+test('`apple-mail` variant', () => {
   const config = {
     content: [{ raw: String.raw`<div class="apple-mail:hidden"></div>` }]
   }
@@ -125,7 +146,7 @@ it('`apple-mail` variant', () => {
   })
 })
 
-it('`ox` variant', () => {
+test('`ox` variant', () => {
   const config = {
     content: [{ raw: String.raw`<div class="ox:hidden"></div>` }]
   }
