@@ -18,7 +18,7 @@
   },
   "devDependencies": {
     "@vitest/coverage-v8": "^1.2.2",
-    "np": "^9.2.0",
+    "np": "^10.0.0",
     "postcss": "^8.4.33",
     "tailwindcss": "^3.4.0",
     "vitest": "^1.2.2"
