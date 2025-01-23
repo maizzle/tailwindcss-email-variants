@@ -1,6 +1,6 @@
 {
   "name": "tailwindcss-email-variants",
-  "version": "3.0.3",
+  "version": "3.0.4",
   "description": "Tailwind CSS variants for email client CSS targeting hacks",
   "main": "src/index.js",
   "files": [
