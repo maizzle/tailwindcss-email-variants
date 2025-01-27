@@ -19,7 +19,7 @@
   "devDependencies": {
     "@vitest/coverage-v8": "^2.0.2",
     "postcss": "^8.4.33",
-    "tailwindcss": "^3.4.0",
+    "tailwindcss": "^4.0.0",
     "vitest": "^2.0.2"
   },
   "peerDependencies": {
