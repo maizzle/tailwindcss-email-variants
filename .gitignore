@@ -1,4 +1,5 @@
 .vscode
+.vitest
 coverage
 node_modules
 npm-debug.log
